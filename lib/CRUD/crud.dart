@@ -50,6 +50,7 @@ class _CrudState extends State<Crud> {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
+        backgroundColor: Colors.grey[50],
         title: Center(
           child: Text(item == null ? 'Add Product' : 'Edit Product',
           style: TextStyle(
@@ -160,7 +161,8 @@ class _CrudState extends State<Crud> {
                     Navigator.pop(context);
                   }, child: Text('Cancel',
                   style: TextStyle(
-                    color: Colors.red
+                    color: Colors.red,
+                    fontSize: 18
                   ),
                   )),
 
@@ -186,7 +188,7 @@ class _CrudState extends State<Crud> {
                         );
                        await fetchData();
                         Navigator.pop(context);
-                     }, child: Text('Update'))
+                     }, child: Text('Update', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),))
                      : ElevatedButton(
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.blue,
@@ -207,7 +209,7 @@ class _CrudState extends State<Crud> {
                         );
                         await fetchData();
                         Navigator.pop(context);
-                      }, child: Text('Save'))
+                      }, child: Text('Save', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)))
                 ],
               ),
             ],
@@ -226,7 +228,7 @@ class _CrudState extends State<Crud> {
           'API CRUD Project',
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
-        backgroundColor: Colors.orange,
+        backgroundColor: Colors.teal,
       ),
       body: productController.isLoading
           ? Center(child: CircularProgressIndicator())
